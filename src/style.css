@@ -209,3 +209,7 @@ body {
 .bg5 {
   background-image: url("./images/placeholder.jpg");
 }
+
+.footer{
+  height: 100px;
+}
