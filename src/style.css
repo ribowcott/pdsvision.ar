@@ -98,7 +98,6 @@ body {
   }
 }
 
-
 /* Content layout */
 .page-wrapper {
   position: relative;
@@ -211,7 +210,7 @@ body {
   background-image: url("./images/placeholder.jpg");
 }
 
-.footer{
+.footer {
   padding-top: 80px;
   height: 100px;
   margin: 0 auto;
@@ -220,4 +219,12 @@ body {
   font-size: 14px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 100;
+}
+
+.qr {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  padding-top: 10px;
 }
