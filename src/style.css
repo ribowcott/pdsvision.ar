@@ -98,14 +98,16 @@ body {
   }
 }
 
-/* Content layout */
 .page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
-  min-height: 100vh;
   padding: 0 10%;
   margin: 0;
 }
+
 
 .header h1 {
   font-size: 50px;
@@ -136,7 +138,10 @@ body {
   grid-template-columns: repeat(auto-fit, 250px);
   gap: 30px;
   justify-content: center;
+
+  flex: 1; /* 👈 THIS is key */
 }
+
 
 .logo-container {
   display: flex;
