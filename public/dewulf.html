@@ -12,6 +12,11 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <style>
+      html,
+      body {
+        overflow: hidden;
+        height: 100%;
+      }
       body {
         background-color: rgb(214, 52, 30);
       }
@@ -55,21 +60,21 @@
       }
 
       #ar-button {
-  all: unset;               /* removes all native styles */
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  background-image: url(./images/AR.png);
-  background-repeat: no-repeat;
-  background-size: 30px 30px;
-  background-position: center;
-  background-color: #242424;
-  cursor: pointer;
-  z-index: 9999;
-}
+        all: unset; /* removes all native styles */
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-image: url(./images/AR.png);
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        background-position: center;
+        background-color: #242424;
+        cursor: pointer;
+        z-index: 9999;
+      }
     </style>
   </head>
   <a href="index.html" class="back-button" aria-label="Back to home">←</a>
@@ -93,7 +98,7 @@
       ar
       ar-modes="webxr scene-viewer quick-look"
     >
-  <button slot="ar-button" id="ar-button"></button>
-</model-viewer>
+      <button slot="ar-button" id="ar-button"></button>
+    </model-viewer>
   </body>
 </html>
