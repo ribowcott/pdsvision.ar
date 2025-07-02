@@ -172,7 +172,7 @@ body {
 
 .grid-item:hover::before {
   backdrop-filter: blur(4px);
-  background-color: #ff00b75a;
+  background-color: #92096b5a;
 }
 
 .grid-item > * {
@@ -212,5 +212,12 @@ body {
 }
 
 .footer{
+  padding-top: 80px;
   height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(119, 119, 119);
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
 }
