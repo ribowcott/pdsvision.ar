@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDSVISION AR Grid</title>
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <!-- MDC Web via CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    />
+  </head>
+  <body>
+    <div class="gradient-background">
+  <svg class="animated-lines" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+</div>
+
+    <div class="page-wrapper">
+      <div class="header">
+        <h1>PDSVISION</h1>
+        <h2>Augmented Reality Examples</h2>
+      </div>
+
+      <div class="grid-container">
+        <a href="/dewulf.html" class="grid-item bg1">
+          <span>Dewulf</span>
+        </a>
+        <a href="/dewulf.html" class="grid-item bg2">
+          <span>Rocket</span>
+        </a>
+        <a href="/pdsbike.html" class="grid-item bg3">
+          <span>ARC</span>
+        </a>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script type="module" src="/main.js"></script>
+    <script type="module">
+// Add random animated lines to the SVG background
+const svg = document.querySelector('.animated-lines');
+
+const numLines = 20;
+for (let i = 0; i < numLines; i++) {
+  const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+
+  // Start position between 0–100%
+  const x1 = Math.random() * 100;
+  const y1 = Math.random() * 100;
+
+  // Choose direction: 45° up or down
+  const direction = Math.random() < 0.5 ? 'up' : 'down';
+  const x2 = x1 + 10; // 10% width ahead
+  const y2 = direction === 'up' ? y1 - 10 : y1 + 10;
+
+  // Set position
+  line.setAttribute('x1', `${x1}%`);
+  line.setAttribute('y1', `${y1}%`);
+  line.setAttribute('x2', `${x2}%`);
+  line.setAttribute('y2', `${y2}%`);
+
+  // Set class and random animation duration
+  line.classList.add('line', `direction-${direction}`);
+  line.style.animationDuration = `${4 + Math.random() * 6}s`;
+  line.style.animationDelay = `${Math.random() * 4}s`;
+
+  svg.appendChild(line);
+}
+</script>
+  </body>
+</html>
