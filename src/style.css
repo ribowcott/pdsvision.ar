@@ -138,8 +138,7 @@ body {
   grid-template-columns: repeat(auto-fit, 250px);
   gap: 30px;
   justify-content: center;
-
-  flex: 1; /* 👈 THIS is key */
+  flex: 1; 
 }
 
 
@@ -231,7 +230,7 @@ body {
 
 .footer {
   padding-top: 80px;
-  padding-bottom: 200px;
+  padding-bottom: 150px;
   height: 100px;
   margin: 0 auto;
   text-align: center;
@@ -242,7 +241,7 @@ body {
 }
 
 .qr {
-  width: 200px;
+  width: 150px;
   aspect-ratio: 1 / 1;
   filter: brightness(0) invert(1);
   opacity: 0.8;
