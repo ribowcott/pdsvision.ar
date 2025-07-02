@@ -17,7 +17,7 @@
       }
       model-viewer {
         width: 100vw;
-        height: 90vh;
+        height: 100vh;
         margin: 0 auto;
       }
       model-viewer::part(default-progress-bar) {
@@ -53,6 +53,23 @@
       .back-button:hover {
         background-color: #585858;
       }
+
+      #ar-button {
+  all: unset;               /* removes all native styles */
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-image: url(./images/AR.png);
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+  background-color: #242424;
+  cursor: pointer;
+  z-index: 9999;
+}
     </style>
   </head>
   <a href="index.html" class="back-button" aria-label="Back to home">←</a>
@@ -75,6 +92,8 @@
       alt="DeWulf Potato Planter"
       ar
       ar-modes="webxr scene-viewer quick-look"
-    ></model-viewer>
+    >
+  <button slot="ar-button" id="ar-button"></button>
+</model-viewer>
   </body>
 </html>
