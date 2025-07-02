@@ -125,13 +125,24 @@ body {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(204, 204, 204);
-  margin: 0;
-  padding-top: 0px;
-  padding-bottom: 50px;
+  margin-top: 20px;      /* positive margin for spacing below image */
+  margin-bottom: 55px;   /* space below the header text */
   text-align: center;
   font-weight: 100;
   letter-spacing: 2px;
+  padding-bottom: 0;     /* remove bottom padding */
 }
+
+
+.header img {
+  width: 100%;        /* Make the image scale to the container width */
+  max-width: 500px;   /* But never grow beyond 500px */
+  height: auto;       /* Keep aspect ratio */
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
 
 .grid-container {
   display: grid;
@@ -162,18 +173,15 @@ body {
   align-items: center;
   justify-content: center;
   aspect-ratio: 1 / 1;
-  background-color: #34232c;
+  background-color: rgba(255, 164, 213, 0.044);
   background-size: cover;
   background-position: center;
   border-radius: 15px;
   overflow: hidden;
-  font-size: 2.5rem;
-  font-weight: 100;
-  font-family: Helvetica, Arial, sans-serif;
-  color: white;
-  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* for Safari */
 }
 
 /* Blur/dark overlay */
@@ -181,15 +189,15 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 0, 0, 0);
   backdrop-filter: blur(0);
   transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
   z-index: 1;
 }
 
 .grid-item:hover::before {
-  backdrop-filter: blur(4px);
-  background-color: #92096b5a;
+  backdrop-filter: blur(2px);
+  background-color: rgba(87, 0, 68, 0.3);
 }
 
 .grid-item > * {
