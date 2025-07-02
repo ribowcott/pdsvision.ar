@@ -150,7 +150,8 @@ body {
   background-position: center;
   border-radius: 15px;
   overflow: hidden;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 100;
   font-family: Helvetica, Arial, sans-serif;
   color: white;
   text-decoration: none;
@@ -171,7 +172,7 @@ body {
 
 .grid-item:hover::before {
   backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #4914395b;
 }
 
 .grid-item > * {
@@ -198,7 +199,7 @@ body {
   background-image: url("/images/dewulf.webp");
 }
 .bg2 {
-  background-image: url("/images/poster.webp");
+  background-image: url("/images/spitfire.webp");
 }
 .bg3 {
   background-image: url("/images/pdsbike.webp");
