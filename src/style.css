@@ -172,7 +172,7 @@ body {
 
 .grid-item:hover::before {
   backdrop-filter: blur(4px);
-  background-color: #4914395b;
+  background-color: #ff00b75a;
 }
 
 .grid-item > * {
