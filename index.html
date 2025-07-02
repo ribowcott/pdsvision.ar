@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDSVISION AR Grid</title>
+    <title>PDSVISION AR</title>
 
     <!-- Your CSS -->
     <link rel="stylesheet" href="./src/style.css" />
 
-    <!-- MDC Web via CDN -->
+    <!-- MDC Web via CDN for CSS only -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
@@ -16,17 +16,20 @@
   </head>
   <body>
     <div class="gradient-background">
-  <svg class="animated-lines" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
-  <div class="floating-particles"></div>
-
-</div>
-
+      <svg
+      class="animated-lines"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      ></svg>
+      <div class="floating-particles"></div>
+    </div>
+    
     <div class="page-wrapper">
       <div class="header">
         <h1>PDSVISION</h1>
         <h2>Augmented Reality Examples</h2>
       </div>
-
+      
       <div class="grid-container">
         <a href="/dewulf.html" class="grid-item bg1">
           <span>Dewulf</span>
@@ -39,65 +42,56 @@
         </a>
       </div>
     </div>
+    <script>
+       // Add random animated lines to the SVG background
+  const svg = document.querySelector('.animated-lines');
+  if (svg) {
+    const numLines = 30;
+    for (let i = 0; i < numLines; i++) {
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
 
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script type="module" src="/src/main.js"></script>
-    <script type="module">
-// Add random animated lines to the SVG background
-const svg = document.querySelector('.animated-lines');
+      const x1 = Math.random() * 100;
+      const y1 = Math.random() * 100;
 
-const numLines = 15;
-for (let i = 0; i < numLines; i++) {
-  const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      const direction = Math.random() < 0.5 ? 'up' : 'down';
+      const x2 = x1 + 10;
+      const y2 = direction === 'up' ? y1 - 10 : y1 + 10;
 
-  // Start position between 0–100%
-  const x1 = Math.random() * 100;
-  const y1 = Math.random() * 100;
+      line.setAttribute('x1', `${x1}%`);
+      line.setAttribute('y1', `${y1}%`);
+      line.setAttribute('x2', `${x2}%`);
+      line.setAttribute('y2', `${y2}%`);
 
-  // Choose direction: 45° up or down
-  const direction = Math.random() < 0.5 ? 'up' : 'down';
-  const x2 = x1 + 10; // 10% width ahead
-  const y2 = direction === 'up' ? y1 - 10 : y1 + 10;
+      line.classList.add('line', `direction-${direction}`);
+      line.style.animationDuration = `${30 + Math.random() * 30}s`;
+      line.style.animationDelay = `${Math.random() * 4}s`;
 
-  // Set position
-  line.setAttribute('x1', `${x1}%`);
-  line.setAttribute('y1', `${y1}%`);
-  line.setAttribute('x2', `${x2}%`);
-  line.setAttribute('y2', `${y2}%`);
+      svg.appendChild(line);
+    }
+  }
 
-  // Set class and random animation duration
-  line.classList.add('line', `direction-${direction}`);
-  line.style.animationDuration = `${20 + Math.random() * 30}s`;
-  line.style.animationDelay = `${Math.random() * 4}s`;
-
-  svg.appendChild(line);
-}
-</script>
-<script type="module">
   // Add floating particles
-const particleContainer = document.querySelector('.floating-particles');
-const numParticles = 40;
+  const particleContainer = document.querySelector('.floating-particles');
+  if (particleContainer) {
+    const numParticles = 40;
 
-for (let i = 0; i < numParticles; i++) {
-  const particle = document.createElement('div');
-  particle.classList.add('particle');
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
 
-  // Random horizontal position
-  particle.style.left = `${Math.random() * 100}vw`;
-  // Start lower than viewport for smooth float up
-  particle.style.top = `${Math.random() * 100}vh`;
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.top = `${Math.random() * 100}vh`;
 
-  // Random size
-  const size = Math.random() * 4 + 4; // 4–8px
-  particle.style.width = `${size}px`;
-  particle.style.height = `${size}px`;
+      const size = Math.random() * 4 + 4;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
 
-  // Random animation duration & delay for natural stagger
-  particle.style.animationDuration = `${15 + Math.random() * 20}s`;
-  particle.style.animationDelay = `${Math.random() * 20}s`;
+      particle.style.animationDuration = `${15 + Math.random() * 20}s`;
+      particle.style.animationDelay = `${Math.random() * 20}s`;
 
-  particleContainer.appendChild(particle);
-}
-</script>
+      particleContainer.appendChild(particle);
+    }
+  }
+    </script>
   </body>
 </html>
