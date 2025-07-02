@@ -17,6 +17,8 @@
   <body>
     <div class="gradient-background">
   <svg class="animated-lines" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+  <div class="floating-particles"></div>
+
 </div>
 
     <div class="page-wrapper">
@@ -39,12 +41,12 @@
     </div>
 
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
     <script type="module">
 // Add random animated lines to the SVG background
 const svg = document.querySelector('.animated-lines');
 
-const numLines = 20;
+const numLines = 15;
 for (let i = 0; i < numLines; i++) {
   const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
 
@@ -65,10 +67,36 @@ for (let i = 0; i < numLines; i++) {
 
   // Set class and random animation duration
   line.classList.add('line', `direction-${direction}`);
-  line.style.animationDuration = `${4 + Math.random() * 6}s`;
+  line.style.animationDuration = `${20 + Math.random() * 30}s`;
   line.style.animationDelay = `${Math.random() * 4}s`;
 
   svg.appendChild(line);
+}
+</script>
+<script type="module">
+  // Add floating particles
+const particleContainer = document.querySelector('.floating-particles');
+const numParticles = 40;
+
+for (let i = 0; i < numParticles; i++) {
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+
+  // Random horizontal position
+  particle.style.left = `${Math.random() * 100}vw`;
+  // Start lower than viewport for smooth float up
+  particle.style.top = `${Math.random() * 100}vh`;
+
+  // Random size
+  const size = Math.random() * 4 + 4; // 4–8px
+  particle.style.width = `${size}px`;
+  particle.style.height = `${size}px`;
+
+  // Random animation duration & delay for natural stagger
+  particle.style.animationDuration = `${15 + Math.random() * 20}s`;
+  particle.style.animationDelay = `${Math.random() * 20}s`;
+
+  particleContainer.appendChild(particle);
 }
 </script>
   </body>
