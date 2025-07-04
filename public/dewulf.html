@@ -76,20 +76,17 @@
         z-index: 9999;
       }
 
-.background-text {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  font-size: 28vw;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.1);
-  z-index: 0;
-  pointer-events: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+      .background-logo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100vw; /* scale as needed */
+        max-height: 90vh; /* scale as needed */
+        opacity: 0.1; /* same faded look */
+        z-index: 0;
+        pointer-events: none;
+      }
     </style>
   </head>
   <a href="index.html" class="back-button" aria-label="Back to home">←</a>
@@ -100,7 +97,11 @@
     marginwidth="0"
     allowfullscreen
   >
-    <div class="background-text">dewulf</div>
+    <img
+      src="./images/Dewulf-logo.png"
+      alt="DeWulf Logo"
+      class="background-logo"
+    />
 
     <model-viewer
       bounds="tight"

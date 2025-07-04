@@ -59,6 +59,18 @@
         background-color: #585858;
       }
 
+      .background-logo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90vw; /* scale as needed */
+        max-height: 90vh; /* scale as needed */
+        opacity: 0.1; /* same faded look */
+        z-index: 0;
+        pointer-events: none;
+      }
+
       #ar-button {
         all: unset; /* removes all native styles */
         position: fixed;
@@ -85,6 +97,7 @@
     marginwidth="0"
     allowfullscreen
   >
+      <img src="./images/ArcLogo.png" alt="Arc Logo" class="background-logo" />
     <model-viewer
       bounds="tight"
       camera-controls
